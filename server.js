@@ -4,7 +4,7 @@ const app = express();
 
 const pumpkinData = require('./data/pumpkin.json');
 const broccoliData = require('./data/broccoli.json');
-const nodeData = require('./data/nodejs.json');
+const nodeData = require('./data/node.json');
 
 
 app.use(bodyParser.json());
@@ -33,7 +33,7 @@ app.post('/pumpkin', (req, res) => {
 });
 
 app.post('/rke143', (req, res) => {
-    if(req.body.username !== 'rke' || req.body.password !== "143") {
+    if(req.body.nimi !== 'rke' || req.body.kood !== "143") {
         res.status(200).json({message: 'Invalid credentials!'});
     } else {
         res.status(200).json({nodeData});
